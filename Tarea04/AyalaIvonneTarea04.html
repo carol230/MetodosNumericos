@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>ayalaivonnetarea04</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="AyalaIvonneTarea04_files/libs/clipboard/clipboard.min.js"></script>
+<script src="AyalaIvonneTarea04_files/libs/quarto-html/quarto.js"></script>
+<script src="AyalaIvonneTarea04_files/libs/quarto-html/popper.min.js"></script>
+<script src="AyalaIvonneTarea04_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="AyalaIvonneTarea04_files/libs/quarto-html/anchor.min.js"></script>
+<link href="AyalaIvonneTarea04_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="AyalaIvonneTarea04_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="AyalaIvonneTarea04_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="AyalaIvonneTarea04_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="AyalaIvonneTarea04_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<table class="caption-top table">
+<colgroup>
+<col style="width: 41%">
+<col style="width: 40%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>ESCUELA POLITÉCNICA NACIONAL</th>
+<th></th>
+<th>Tarea No.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Metodos Numericos – Computación</strong></td>
+<td></td>
+<td><strong>4</strong></td>
+</tr>
+<tr class="even">
+<td>NOMBRE: Ivonne Carolina Ayala</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<section id="bisección" class="level2">
+<h2 class="anchored" data-anchor-id="bisección">Bisección</h2>
+<section id="método-de-bisección-para-encontrar-soluciones" class="level3">
+<h3 class="anchored" data-anchor-id="método-de-bisección-para-encontrar-soluciones">1. Método de Bisección para Encontrar Soluciones</h3>
+<p>Use el método de bisección para encontrar las soluciones precisas (con una tolerancia de <span class="math inline">\(10^{-2}\)</span>) de la siguiente ecuación:</p>
+<p><span class="math display">\[
+x^3 - 7x^2 + 14x - 6 = 0
+\]</span></p>
+<p>en cada intervalo dado.</p>
+<div id="45abe922-94b1-4d5f-969f-c808470ad638" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bisection_method(func, X0, XF, tol<span class="op">=</span><span class="fl">1e-5</span>):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> func(X0) <span class="op">*</span> func(XF) <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"La función no tiene raíces o tiene múltiples raíces en el intervalo dado."</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    Xm <span class="op">=</span> X0</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">abs</span>(XF <span class="op">-</span> X0) <span class="op">&gt;=</span> tol:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        Xm <span class="op">=</span> (X0 <span class="op">+</span> XF) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> func(Xm) <span class="op">==</span> <span class="fl">0.0</span>:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> func(Xm) <span class="op">*</span> func(X0) <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>            XF <span class="op">=</span> Xm</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            X0 <span class="op">=</span> Xm</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">round</span>(Xm, <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="62c60c60-5ca0-45bc-91e1-91f4d16cefb6" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> F(x):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">7</span><span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">14</span><span class="op">*</span>x <span class="op">-</span> <span class="dv">6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="a.-intervalo-0-1" class="level4">
+<h4 class="anchored" data-anchor-id="a.-intervalo-0-1">a. Intervalo <span class="math inline">\([0, 1]\)</span></h4>
+<div id="940a026a-46e9-4553-a112-c522c6f03abc" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>X0, XF <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>root <span class="op">=</span> bisection_method(F,X0, XF)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"La raíz en el intervalo [</span><span class="sc">{</span>X0<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>XF<span class="sc">}</span><span class="ss">] es: </span><span class="sc">{</span>root<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz en el intervalo [0, 1] es: 0.585792542</code></pre>
+</div>
+</div>
+</section>
+<section id="b.-intervalo-1-3.2" class="level4">
+<h4 class="anchored" data-anchor-id="b.-intervalo-1-3.2">b. Intervalo <span class="math inline">\([1, 3.2]\)</span></h4>
+<div id="ed3bde5e-f50e-48bf-9990-fa1b0887e149" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>X0, XF <span class="op">=</span> <span class="dv">1</span>, <span class="fl">3.2</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>root <span class="op">=</span> bisection_method(F,X0, XF)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"La raíz en el intervalo [</span><span class="sc">{</span>X0<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>XF<span class="sc">}</span><span class="ss">] es: </span><span class="sc">{</span>root<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz en el intervalo [1, 3.2] es: 3.000002289</code></pre>
+</div>
+</div>
+</section>
+<section id="c.-intervalo-3.24" class="level4">
+<h4 class="anchored" data-anchor-id="c.-intervalo-3.24">c.&nbsp;Intervalo <span class="math inline">\([3.2,4]\)</span></h4>
+<div id="c17cb597-37fb-4fb5-a284-fdc7be01ad58" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>X0, XF <span class="op">=</span> <span class="fl">3.2</span>, <span class="dv">4</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>root <span class="op">=</span> bisection_method(F,X0, XF)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"La raíz en el intervalo [</span><span class="sc">{</span>X0<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>XF<span class="sc">}</span><span class="ss">] es: </span><span class="sc">{</span>root<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz en el intervalo [3.2, 4] es: 3.414215088</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="representación-gráfica-de-funciones" class="level3">
+<h3 class="anchored" data-anchor-id="representación-gráfica-de-funciones">4. Representación Gráfica de Funciones</h3>
+<section id="a.-dibujar-las-gráficas" class="level4">
+<h4 class="anchored" data-anchor-id="a.-dibujar-las-gráficas">a. Dibujar las Gráficas</h4>
+<p>Dibuje las gráficas de las siguientes funciones en el mismo sistema de coordenadas:</p>
+<ol type="1">
+<li><span class="math inline">\(y = x^2 - 1\)</span></li>
+<li><span class="math inline">\(y = e^{1 - x^2}\)</span></li>
+</ol>
+<div id="caccf02a-83ed-4912-a02c-4f30cd7fb8fa" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>x_vals <span class="op">=</span> np.arange(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>func1 <span class="op">=</span> <span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>func2 <span class="op">=</span> <span class="kw">lambda</span> x: np.exp(<span class="dv">1</span> <span class="op">-</span> x<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>plt.plot(x_vals, func1(x_vals), color<span class="op">=</span><span class="st">'purple'</span>, label<span class="op">=</span><span class="vs">r'$y = x^2 - 1$'</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>plt.plot(x_vals, func2(x_vals), color<span class="op">=</span><span class="st">'orange'</span>, label<span class="op">=</span><span class="vs">r'$y = e^{(1 - x^2)}$'</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x'</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'y'</span>)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Comparación de Funciones'</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'upper right'</span>)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>plt.grid(visible<span class="op">=</span><span class="va">True</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="AyalaIvonneTarea04_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="b.-método-de-bisección-para-aproximación" class="level4">
+<h4 class="anchored" data-anchor-id="b.-método-de-bisección-para-aproximación">b. Método de Bisección para Aproximación</h4>
+<p>Use el método de bisección para encontrar una aproximación (con una tolerancia de <span class="math inline">\(10^{-3}\)</span>) del valor de <span class="math inline">\(x\)</span> que satisface la ecuación:</p>
+<p><span class="math display">\[
+x^2 - 1 = e^{1 - x^2}
+\]</span></p>
+<p>en el intervalo <span class="math inline">\([-2, 0]\)</span>.</p>
+<div id="23d35f30-dabe-42a3-ba87-33a2d3cc46d4" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> F1(x):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span> <span class="op">-</span> np.exp(<span class="dv">1</span><span class="op">-</span>x<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>X0,XF <span class="op">=</span> <span class="op">-</span><span class="dv">2</span>, <span class="dv">0</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>root <span class="op">=</span> bisection_method(F1,X0, XF)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"La raíz para la funcion es: </span><span class="sc">{</span>root<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La raíz para la funcion es: -1.251853943</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="ejercicios-aplicados" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicios-aplicados">EJERCICIOS APLICADOS</h3>
+</section>
+<section id="cálculo-del-volumen-de-agua-en-un-abrevadero" class="level3">
+<h3 class="anchored" data-anchor-id="cálculo-del-volumen-de-agua-en-un-abrevadero">1. Cálculo del Volumen de Agua en un Abrevadero</h3>
+<p>Un abrevadero de longitud <span class="math inline">\(L\)</span> tiene una sección transversal en forma de semicírculo con radio <span class="math inline">\(r\)</span> (consulte la figura adjunta). Cuando se llena con agua hasta una distancia <span class="math inline">\(h\)</span> desde la parte superior, el volumen <span class="math inline">\(V\)</span> de agua se calcula como:</p>
+<p><span class="math display">\[
+V = L \left[ 0.5\pi r^2 - r^2 \arcsin\left(\frac{h}{r}\right) - h \sqrt{r^2 - h^2} \right]
+\]</span></p>
+<p><strong>Nota</strong>: <span class="math inline">\(\arcsin\)</span> representa la función arco seno, y <span class="math inline">\(h \leq r\)</span> para asegurar que la altura del agua esté dentro del semicírculo.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="AyalaIvonneTarea04_files/figure-html/58b393d9-dce1-4b24-aca4-daa50766496d-1-4e26693c-615d-4f02-9b92-8c6f3c62b38e.png" class="img-fluid figure-img"></p>
+<figcaption>Img1Tarea04</figcaption>
+</figure>
+</div>
+<section id="encontrar-la-profundidad-del-agua" class="level4">
+<h4 class="anchored" data-anchor-id="encontrar-la-profundidad-del-agua">Encontrar la Profundidad del Agua</h4>
+<p>Suponga que el abrevadero tiene las siguientes dimensiones:</p>
+<ul>
+<li>Longitud <span class="math inline">\(L = 10 \, \text{cm}\)</span></li>
+<li>Radio <span class="math inline">\(r = 1 \, \text{cm}\)</span></li>
+<li>Volumen de agua <span class="math inline">\(V = 12.4 \, \text{cm}^3\)</span></li>
+</ul>
+<p>Encuentre la profundidad del agua <span class="math inline">\(h\)</span> en el abrevadero con una precisión de <span class="math inline">\(0.01 \, \text{cm}\)</span>.</p>
+<div id="838d5755-f153-4571-96e2-1b40c7c5252f" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> V(h, L<span class="op">=</span><span class="dv">10</span>, r<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> L <span class="op">*</span> (<span class="fl">0.5</span> <span class="op">*</span> np.pi <span class="op">*</span> r<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> r<span class="op">**</span><span class="dv">2</span> <span class="op">*</span> np.arcsin(h<span class="op">/</span>r) <span class="op">-</span> h <span class="op">*</span> np.sqrt(r<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> h<span class="op">**</span><span class="dv">2</span>)) <span class="op">-</span> <span class="fl">12.4</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span> <span class="co"># Intervalo inicial</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>root <span class="op">=</span> bisection_method(V, a, b, tol<span class="op">=</span><span class="fl">0.01</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"La profundidad del agua es: </span><span class="sc">{</span>root<span class="sc">}</span><span class="ss"> cm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La profundidad del agua es: 0.1640625 cm</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="caída-de-un-objeto-con-resistencia-viscosa" class="level3">
+<h3 class="anchored" data-anchor-id="caída-de-un-objeto-con-resistencia-viscosa">2. Caída de un Objeto con Resistencia Viscosa</h3>
+<p>Un objeto que cae verticalmente a través del aire está sujeto a una resistencia viscosa, así como a la fuerza de gravedad. Suponga que un objeto con masa <span class="math inline">\(m\)</span> cae desde una altura <span class="math inline">\(s_0\)</span>, y que la altura del objeto después de <span class="math inline">\(t\)</span> segundos está dada por:</p>
+<p><span class="math display">\[
+s(t) = s_0 - \frac{mg}{k}t + \frac{m^2g}{k^2}\left( 1 - e^{-kt/m} \right)
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><span class="math inline">\(g = 9.81 \, \text{m/s}^2\)</span> es la aceleración debido a la gravedad.</li>
+<li><span class="math inline">\(k\)</span> es el coeficiente de resistencia del aire en <span class="math inline">\(N \cdot s/m\)</span>.</li>
+</ul>
+<p>Suponga los siguientes valores:</p>
+<ul>
+<li>Altura inicial <span class="math inline">\(s_0 = 300 \, \text{m}\)</span></li>
+<li>Masa del objeto <span class="math inline">\(m = 0.25 \, \text{kg}\)</span></li>
+<li>Coeficiente de resistencia <span class="math inline">\(k = 0.1 \, \text{N} \cdot \text{s/m}\)</span></li>
+</ul>
+<p>Encuentre, con una precisión de <span class="math inline">\(0.01\)</span> segundos, el tiempo que tarda el objeto en golpear el suelo.</p>
+<div id="ca5753ba-0af0-466c-99b1-6ae292d6bf56" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>s0 <span class="op">=</span> <span class="dv">300</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">0.25</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> <span class="fl">9.81</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="fl">0.1</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> s(t):</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> s0 <span class="op">-</span> (m <span class="op">*</span> g <span class="op">/</span> k) <span class="op">*</span> t <span class="op">+</span> (m<span class="op">**</span><span class="dv">2</span> <span class="op">*</span> g <span class="op">/</span> k<span class="op">**</span><span class="dv">2</span>) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> np.exp(<span class="op">-</span>k <span class="op">*</span> t <span class="op">/</span> m))</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="dv">0</span>, <span class="dv">100</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>tol <span class="op">=</span> <span class="fl">0.01</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>root <span class="op">=</span> bisection_method(s, a, b, tol)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El tiempo que tarda en golpear el piso es aproximadamente: </span><span class="sc">{</span>root<span class="sc">:.9g}</span><span class="ss"> segundos"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El tiempo que tarda en golpear el piso es aproximadamente: 14.7277832 segundos</code></pre>
+</div>
+</div>
+</section>
+<section id="ejercicios-teóricos" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicios-teóricos">Ejercicios Teóricos</h3>
+<section id="uso-del-teorema-2.1-para-encontrar-la-cota-de-iteraciones" class="level4">
+<h4 class="anchored" data-anchor-id="uso-del-teorema-2.1-para-encontrar-la-cota-de-iteraciones">Uso del Teorema 2.1 para Encontrar la Cota de Iteraciones</h4>
+<p>Use el Teorema 2.1 para encontrar una cota para el número de iteraciones necesarias para lograr una aproximación con precisión de <span class="math inline">\(10^{-4}\)</span> para la solución de la siguiente ecuación:</p>
+<p><span class="math display">\[
+x^3 - x - 1 = 0
+\]</span></p>
+<p>dentro del intervalo <span class="math inline">\([1, 2]\)</span>.</p>
+<p>Luego, encuentre una aproximación de la raíz con este grado de precisión.</p>
+<div id="8178447a-ec5c-419d-a33e-e3ffb3e9e3f7" class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> x <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="dv">1</span>, <span class="dv">2</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>epsilon <span class="op">=</span> <span class="fl">1e-4</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>n_min <span class="op">=</span> <span class="bu">int</span>(np.ceil((np.log(b <span class="op">-</span> a) <span class="op">-</span> np.log(epsilon)) <span class="op">/</span> np.log(<span class="dv">2</span>)))</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Iteraciones mínimas necesarias según el Teorema 2.1: </span><span class="sc">{</span>n_min<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>root <span class="op">=</span> bisection_method(f, a, b, tol<span class="op">=</span>epsilon)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"La aproximación de la raíz es: </span><span class="sc">{</span>root<span class="sc">:.9g}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Iteraciones mínimas necesarias según el Teorema 2.1: 14
+La aproximación de la raíz es: 1.32476807</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="declaración-de-uso-de-inteligencia-artificial" class="level3">
+<h3 class="anchored" data-anchor-id="declaración-de-uso-de-inteligencia-artificial">Declaración de Uso de Inteligencia Artificial</h3>
+<p>Este documento fue creado con la ayuda de ChatGPT, diseñada para facilitar la comprensión de código y mejorar la eficiencia de desarrollo. La IA fue utilizada para:</p>
+<ol type="1">
+<li><p><strong>Entender el código</strong></p></li>
+<li><p><strong>Optimización del formato</strong></p></li>
+<li><p><strong>Sugerencias para mejoras</strong></p></li>
+</ol>
+</section>
+<section id="link-al-repositorio" class="level3">
+<h3 class="anchored" data-anchor-id="link-al-repositorio">Link al repositorio</h3>
+<p>https://github.com/carol230/MetodosNumericos</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
